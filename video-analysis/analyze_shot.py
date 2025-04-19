@@ -35,7 +35,7 @@ while cap.isOpened():
         ankle = np.array([landmarks[mp.pose.PoseLandmark.RIGHT_ANKLE].x, landmarks[mp.pose.PoseLandmark.RIGHT_ANKLE].y])
 
         v1 = hip - knee
-        v2 = ankle = knee
+        v2 = ankle - knee
         knee_angle = np.arccos(np.dot(v1, v2) / (np.linalg.norm(v1) * np.linalg.norm(v2)))
 
         # Plant foot distance
