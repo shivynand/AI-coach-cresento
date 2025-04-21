@@ -1,6 +1,6 @@
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
-from langchain_community.llms import Ollama
+from langchain_ollama import OllamaLLM as Ollama
 from .config import Config
 
 class Coach:

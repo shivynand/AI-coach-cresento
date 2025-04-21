@@ -16,7 +16,7 @@ class DocumentProcessor:
             if path.suffix == ".pdf":
                 loader = PyPDFLoader(str(path))
             elif path.suffix == ".txt":
-                loader = TextLoader(str(path))
+                loader = TextLoader(str(path), encoding='utf-8')
             else:
                 continue
             docs.extend(loader.load())

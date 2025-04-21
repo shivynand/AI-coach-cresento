@@ -1,6 +1,10 @@
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings 
 from .config import Config
+import shutil
+import os 
+
+
 
 class VectorStore:
     def __init__(self):
@@ -21,3 +25,10 @@ class VectorStore:
             allow_dangerous_deserialization=True
         )
         return self.db
+    
+    def clear_vector_store(self):
+        """Clear the existing vector store and its files"""
+        if os.path.exists(Config.FAISS_INDEX_PATH):
+            shutil.rmtree(Config.FAISS_INDEX_PATH)
+            print(f"Vector store at {Config.FAISS_INDEX_PATH} has been cleared.")
+        self.db = None
