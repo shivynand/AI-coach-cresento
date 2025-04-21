@@ -1,0 +1,4 @@
+to-do:
+1. hard code training, don't use an llm for it
+2. use llm for training feedback and enquiries about the training program
+3. code the percentile/relative performance calculator. 
