@@ -1,4 +1,6 @@
 to-do:
-1. hard code training, don't use an llm for it
-2. use llm for training feedback and enquiries about the training program
+1. create training program in llm.
+2. use llm for training feedback and enquiries about the training program.
 3. code the percentile/relative performance calculator. 
+4. use together ai for api calls to deepseek.
+5. semantic embedding in hugging face / lang chain.

@@ -1,6 +1,6 @@
 class Config:
     MODEL_NAME = "tinyllama"  # Use your local Ollama model name
-    EMBEDDING_MODEL = "sentence-transformers/all-mpnet-base-v2"
+    EMBEDDING_MODEL = "pawan2411/semantic-embedding"
     CHUNK_SIZE = 1000
     CHUNK_OVERLAP = 200
     TEMPERATURE = 0.7
