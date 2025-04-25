@@ -1,0 +1,215 @@
+CREATING & STRUCTURING & VISUALLY OUTPUTTING FOOTBALL TRAINING PROGRAMS
+
+===================================================================
+SECTION 1: GENERAL PRINCIPLES OF PROGRAM OUTPUT
+===================================================================
+
+1.1. Program Duration & Structure
+---------------------------------
+- Training programs typically run for **4 to 12 weeks**.
+- Each week is called a "microcycle".
+- A group of 4 weeks (or similar) is a "mesocycle".
+- **Progression** is gradual: increase in reps, sets, load, or complexity, not wholesale exercise changes.
+- After each mesocycle (e.g., 4 weeks), introduce new or varied exercises to stimulate adaptation and prevent monotony.
+
+1.2. Visual Output Format
+-------------------------
+- Use **tables** or **lists** to show weekly splits.
+- Clearly separate each week or phase.
+- Use **bold** or **highlighting** for changes or key progressions.
+- Indicate **sets, reps, intensity, or other variables** for each exercise.
+- Use section headers (e.g., “Week 1”, “Week 2”) for clarity.
+- Include a **progression note** at the start of each week.
+- Optionally, use color or icons (if supported) to signify new exercises or deload weeks.
+
+1.3. User Guidance
+------------------
+- Begin with an **overview**: duration, main focus, expected outcomes.
+- For each week:  
+  - List daily sessions.
+  - List exercises per session, with prescribed sets/reps/intensity.
+  - Note any specific goals or changes from previous week.
+- At the start and end of each phase (e.g., every 4 weeks), suggest a **progress check**.
+
+===================================================================
+SECTION 2: EXAMPLE VISUAL OUTPUT STRUCTURE
+===================================================================
+
+2.1. Sample 8-Week Program Output
+
+============================================
+PROGRAM OVERVIEW
+Duration: 8 weeks  
+Goal: Improve football-specific strength, speed, technical skills, and conditioning  
+Progression: Increase reps, sets, or intensity every week; new exercises after week 4
+
+============================================
+WEEKLY SPLIT
+
+Monday: Technical Skills + Speed/Agility  
+Tuesday: Strength Training (Lower Body Focus)  
+Wednesday: Recovery / Light Conditioning  
+Thursday: Tactical Drills + Strength (Upper Body/Core)  
+Friday: Speed/Explosive Power + Small-Sided Games  
+Saturday: Match Simulation or Full Match  
+Sunday: Rest
+
+============================================
+WEEK-BY-WEEK BREAKDOWN
+
+------------------------
+WEEK 1: Foundation
+------------------------
+**Monday:**  
+- Passing Drills (4 sets x 8 reps)  
+- Dribbling Technique (4 x 20 meters)  
+- Ladder Agility (4 x 30 seconds)
+
+**Tuesday:**  
+- Back Squat (3 sets x 8 reps @ 60% 1RM)  
+- Lunges (3 x 10 each leg)  
+- Plank Holds (3 x 30 seconds)
+
+**Wednesday:**  
+- Low-intensity jog (20 min)  
+- Foam rolling/stretching (15 min)
+
+**Thursday:**  
+- Tactical positioning (30 min)  
+- Push-ups (3 x 12)  
+- Pull-ups (3 x 5)  
+- Side plank (3 x 20 sec each side)
+
+**Friday:**  
+- Sprints (6 x 20 meters)  
+- Medicine ball throws (3 x 8)  
+- Small-sided games (3 x 8 min)
+
+**Saturday:**  
+- Match simulation (Full 90 min or modified)
+
+**Sunday:**  
+- Rest
+
+------------------------
+WEEK 2: Progression
+------------------------
+- **Increase intensity**: Add 1 set or 2 reps to main strength exercises.
+- Increase plank hold to 40 seconds.
+- Passing drills now 5 sets x 8 reps.
+
+(Repeat structure as above, with changes highlighted in bold or italics)
+
+------------------------
+WEEK 3: Further Progression
+------------------------
+- **Increase sprint distance to 25 meters.**
+- Add 5% more weight to strength exercises.
+- Dribbling technique with added defender (if available).
+
+------------------------
+WEEK 4: Peak of First Mesocycle
+------------------------
+- **Add 1 set to all strength exercises.**
+- Small-sided games for 4 x 8 min.
+- Technical drills: add weak-foot passing.
+
+------------------------
+WEEK 5: New Phase / Variation
+------------------------
+- **Change main lower body exercise (e.g., Front Squat instead of Back Squat).**
+- New agility ladder patterns.
+- Tactical session: add transition play.
+
+(Continue progressions in reps/sets as above)
+
+------------------------
+WEEK 6–8: Continue to Progress
+------------------------
+- Gradually increase reps, sets, or intensity.
+- Introduce new technical/tactical drills as needed.
+- Week 8: **Deload** (reduce volume by 30-50%) and assess progress.
+
+============================================
+2.2. Output Formatting Tips
+
+- Use **tables** for clarity if platform allows.
+- Highlight progressions (e.g., `*Week 3: Increase to 4 sets*`).
+- If space permits, add **progression graphs** (e.g., sets/reps over time).
+
+Example Table (Text):
+
+| Week | Exercise        | Sets x Reps | Notes                  |
+|------|-----------------|-------------|------------------------|
+| 1    | Back Squat      | 3x8         | 60% 1RM                |
+| 2    | Back Squat      | 4x8         | +1 set                 |
+| 3    | Back Squat      | 4x10        | +2 reps per set        |
+| 4    | Back Squat      | 4x10        | Maintain, focus on form|
+| 5    | Front Squat     | 3x8         | Change exercise        |
+
+===================================================================
+SECTION 3: PRACTICAL OUTPUT GUIDELINES FOR LLM/RAG SYSTEMS
+===================================================================
+
+3.1. Personalization
+--------------------
+- Adjust sets, reps, and intensity based on user’s skill and training history.
+- Allow user to select number of weeks (4–12).
+- Provide clear instructions for “progression” (e.g., “If you complete all sets easily, add 1–2 reps next week”).
+
+3.2. Visual Clarity
+-------------------
+- Clearly label each week and day.
+- Use indentation, bullet points, or tables for readability.
+- Summarize progression at the top of each week:  
+  e.g., “**This week: Increase all lifts by 1 set.**”
+
+3.3. Progression Logic
+----------------------
+- Do not change exercises more than every 4 weeks unless for injury/preference.
+- Progress primarily by sets/reps/intensity.
+- After a mesocycle, introduce some new variations (grip, stance, tempo, exercise).
+
+3.4. Deloads and Checks
+-----------------------
+- For programs longer than 8 weeks, insert a deload (reduced intensity/volume) every 4–6 weeks.
+- At the end of each phase, prompt user to assess progress (self-rating, test).
+
+===================================================================
+SECTION 4: EXAMPLE OUTPUT SNIPPET FOR USERS
+===================================================================
+
+**8-Week Football Performance Program**
+
+**Week 1: Foundation**
+- *Monday*: Passing (4x8), Dribbling (4x20m), Agility Ladder (4x30s)
+- *Tuesday*: Back Squat (3x8), Lunges (3x10/leg), Plank (3x30s)
+- ...
+**Progression Note:** Each week, increase squats/lunges by 1 set. After 4 weeks, swap to Front Squat.
+
+**Week 2:**
+- *Monday*: Passing (5x8), Dribbling (5x20m), Agility Ladder (5x30s)
+- *Tuesday*: Back Squat (4x8), Lunges (4x10/leg), Plank (3x40s)
+- ...
+
+**Deload Week (Week 8):**  
+- Reduce all sets/reps by 30–50%. Focus on technique and recovery.
+
+===================================================================
+SECTION 5: RECOMMENDED OUTPUT FEATURES FOR INTERACTIVE SYSTEMS
+===================================================================
+
+- Allow user to click “Next Week” for progression.
+- Show exercise history and progress.
+- Provide explanation tooltips for each exercise.
+- Option to download/print program.
+- Option to auto-adjust based on user feedback (e.g., “Too easy” or “Missed session”).
+
+===================================================================
+References and Further Reading
+===================================================================
+
+- “The Essentials of Strength Training and Conditioning” (NSCA)
+- “High-Performance Training for Sports” by Joyce & Lewindon
+- “Periodization: Theory and Methodology of Training” by Tudor Bompa
+- Sports science literature on progressive overload and periodization
