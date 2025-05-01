@@ -11,47 +11,42 @@ mp_pose = mp.solutions.pose
 mp_drawing = mp.solutions.drawing_utils
 pose = mp_pose.Pose(min_detection_confidence=0.8, min_tracking_confidence=0.8)
 
-# Load YOLOv8 model
-model = YOLO("yolov8n.pt")
+# Load models
+goal_model = YOLO("/Users/shivanshanand/AI-coach-cresento/runs/detect/train/weights/best.pt")  # Custom-trained model for goals
+yolo_model = YOLO("yolov8n.pt")  # Pre-trained model for player and ball
 
 def detect_elements(frame, previous_ball_pos=None, previous_goal_box=None, frame_idx=0):
-    # Detect player, ball, and goal using YOLOv8
-    results = model(frame, verbose=False)
+    # Detect player and ball using pre-trained YOLOv8 model
+    yolo_results = yolo_model(frame, verbose=False)
     player_box = None
     ball_box = None
-    goal_box = previous_goal_box
-    goal_confidence = 0.0
 
-    # Process YOLOv8 detections
-    for r in results:
+    for r in yolo_results:
         boxes = r.boxes
         for box in boxes:
             cls = int(box.cls[0])
             conf = float(box.conf)
             x_min, y_min, x_max, y_max = map(int, box.xyxy[0])
-
-            # Player detection
-            if cls == 0 and conf >= 0.3:  # Class 0 is person
+            if cls == 0 and conf >= 0.3:  # Class 0 is 'person' in yolov8n.pt
                 player_box = (x_min, y_min, x_max, y_max)
-
-            # Ball detection
-            elif cls == 32 and conf >= 0.3:  # Class 32 is sports ball
+            elif cls == 32 and conf >= 0.3:  # Class 32 is 'sports ball' in yolov8n.pt
                 ball_box = (x_min, y_min, x_max, y_max)
 
-            # Goal detection: Look for a large rectangular structure in the upper half
-            # YOLOv8 doesn't have a "goal" class, so we'll look for a generic object that fits the goal's characteristics
-            if frame_idx < 50 or goal_box is None:  # Only detect goal in first 50 frames or if not found
-                if conf >= 0.4:  # Higher confidence threshold for goal
-                    # Check if the object is in the upper half of the frame
-                    if y_max < frame.shape[0] * 0.5:
-                        # Check if the object has a goal-like shape (wider than tall)
-                        width = x_max - x_min
-                        height = y_max - y_min
-                        aspect_ratio = width / height if height > 0 else 0
-                        if 1.5 < aspect_ratio < 4.0 and width > frame.shape[1] * 0.3:  # Goal-like dimensions
-                            if goal_box is None or conf > goal_confidence:
-                                goal_box = (x_min, y_min, x_max, y_max)
-                                goal_confidence = conf
+    # Detect goal using custom-trained model
+    goal_box = previous_goal_box
+    goal_confidence = 0.0
+    if frame_idx < 50 or goal_box is None:  # Only detect goal in first 50 frames or if not found
+        goal_results = goal_model(frame, verbose=False)
+        for r in goal_results:
+            boxes = r.boxes
+            for box in boxes:
+                cls = int(box.cls[0])
+                conf = float(box.conf)
+                x_min, y_min, x_max, y_max = map(int, box.xyxy[0])
+                if cls == 0 and conf >= 0.5:  # Class 0 is 'goal' in custom model
+                    if goal_box is None or conf > goal_confidence:
+                        goal_box = (x_min, y_min, x_max, y_max)
+                        goal_confidence = conf
 
     # Predict ball position if YOLO fails
     if ball_box is None and previous_ball_pos is not None:

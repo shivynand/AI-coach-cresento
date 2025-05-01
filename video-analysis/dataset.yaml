@@ -1,0 +1,4 @@
+train: /Users/shivanshanand/AI-coach-cresento/video-analysis/dataset/images/train
+val: /Users/shivanshanand/AI-coach-cresento/video-analysis/dataset/images/val
+nc: 1
+names: ['goal']
